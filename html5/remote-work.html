@@ -1,0 +1,455 @@
+<!DOCTYPE HTML>
+<!-- <html lang="en-US"> -->
+<html lang="de-DE" class="fade">
+<!-- 
+  ^ a class of "fade" makes slides fade smoothly into one another
+ -->
+<!-- <html lang="en-US" class="nonumbers"> -->
+<!-- 
+  If you want no numbers on the slides add a "nonumbers" class 
+  to the HTML element.
+  Adding a class of "fade" will make slides fade into another. 
+-->
+<head>
+  <meta charset="UTF-8">
+  <title>Working remotely</title>
+<!-- 
+  If you upload your slides to the web, ensure that you have 
+  a good title - this shows up in search results and social
+  media links
+ -->
+  <meta name="viewport" content="width=device-width, user-scalable=yes">
+  <link rel="stylesheet" href="themes/mozilla/styles/style.css">
+</head>
+<body class="list">
+  <header class="caption">
+    <h1>Working remotely</h1>
+    <p class="footer">
+      Florian Scholz,
+      <a href="http://twitter.com/floscholz">@floscholz</a> oder
+      <a href="mailto:fscholz@mozilla.com">fscholz@mozilla.com</a>
+    </p>
+  </header>
+  <aside class="talkdescription">
+    <p><button onclick="goFullScreen()">Go fullscreen</button></p>
+    <p class="abstract">We are all "remoties" at Mozilla! Teams and communities are geo-distributed all over the world. Working from home, Starbucks or Heathrow airport in several timezones with different native languages and cultures. How does it even <em>work</em>? How can office based co-workers and remote workers be working together effectively? Do you work from home? Why? Why not? I'd like to discuss.
+    </p>
+  </aside>
+
+<!-- 
+    Simply copy the whole block for each slide you want.
+  Special slides get extra classes. Each slide needs an ID 
+  to allow for bookmarking and target jumping.
+-->
+
+  <div id="cover" class="slide"><div>
+    <section>
+      <header>
+        <h2>Working Remotely</h2>
+      </header>
+      <footer class="byline">Florian Scholz, Technical Writer / Web Developer, Mozilla,
+      <br/> <br/> Remote Worker, <br/> Weltenbummler, <br />
+      <a href="http://florianscholz.com">florianscholz.com</a>. <br><br>
+      <p>Agiles Design Camp, Bremen, 29.03.2014</p></footer>
+    <footer class="notes">
+    </footer>
+    </section>
+  </div></div>
+
+<!-- end slide block -->
+
+  <div id="remote-revolution" class="slide"><div>
+    <section>
+      <header>
+        <h2>REMOTE REVOLUTION</h2>
+      </header>
+      <blockquote>
+        <p>In the near future, everyone will work remotely, including those
+      sitting across from you. You'll need to prepare for this inversion.</p>
+        <p class="byline">Kevin Kelly, Wired Magazine</p>
+      </blockquote>
+      <footer class="notes">
+      </footer> 
+    </section>
+  </div></div>
+  
+  <div id="office-not-required" class="slide"><div>
+    <section>
+      <header>
+        <h2>Office not required</h2>
+      </header>
+      <blockquote>
+        <p>"Office not required" isn't just the future – it's the 
+        <em>present</em>. Now is your chance to catch up.</p>
+        <p class="byline">Jason Fried, David Heinemeier Hansson, Founders of 
+        37SIGNALS</p>
+      </blockquote>
+      <footer class="notes">
+      </footer> 
+    </section>
+  </div></div>
+
+  <div id="doge" class="slide cover h"><div>
+    <section>
+      <header>
+
+      </header>
+      <img src="pictures/remote/wow-remote-doge.jpg" 
+           class="middle" 
+           alt="doge">
+      <footer class="notes">
+      </footer>
+    </section>
+  </div></div>
+  
+    <div id="reasons" class="slide"><div>
+    <section>
+      <header>
+        <h2>Pro Remote Working</h2>
+      </header>
+      <ul>
+        <li>Wahl des besten Arbeitgebers/Arbeitnehmers unabhängig vom Standort</li>
+        <li>Pendeln kostet Zeit, Geld, ist schlecht für die Umwelt und
+        Work-Life Balance</li>
+        <li>Mitarbeiter vor Ort haben (nähe des Kunden, bei Events)</li>
+        <li>International präsent sein. Zeitzonen.</li>
+        <li>Selbstständigkeit fördern, Verantwortungsbewusstsein stärken</li>
+      </ul>
+      <footer class="notes">
+      </footer>
+    </section>
+  </div></div>
+  
+   <div id="office-nay" class="slide"><div>
+    <section>
+      <header>
+        <h2>Arbeit passiert nicht auf der Arbeit</h2>
+      </header>
+      <ul>
+        <li>Zellenblock 9-to-5. Yay or nay?</li>
+        <li>Telefon. Meeting. Lautstärke. Ablenkung. Kaffee.</li>
+        <li>"Ich komme meistens sehr früh oder bleibe spät, sonst bekomme ich nichts gebacken".</li>
+        <li>Zen hours</li>
+      </ul>
+      <footer class="notes">
+      </footer>
+    </section>
+  </div></div>
+
+  <div id="googirl" class="slide"><div>
+    <section>
+      <header>
+        <h2>Googirl</h2>
+      </header>
+      <img src="pictures/remote/marissa.jpg" 
+           class="middle"
+           alt="Marissa Mayer">
+      </small>
+      <footer class="notes">
+      </footer>
+    </section>
+  </div></div>
+
+  <div id="einwaende" class="slide"><div>
+    <section>
+      <header>
+        <h2>Einwände</h2>
+      </header>
+      <ul>
+        <li>Produktiv ist man nur gemeinsam in einem Raum</li>
+        <li>Woher weiß ich, dass gearbeitet wird?</li>
+        <li>Zuhause wird man doch noch viel mehr abgelenkt</li>
+        <li>Nur im Büro ist man sicher (digital + analog)</li>
+        <li>Wer geht ans Telefon?</li>
+        <li>Neidische Kollegen: "Der ist heut im home office, d'oh!"</li>
+        <li>Ich brauche aber <strong>jetzt</strong> eine Antwort</li>
+        <li>Das funktioniert bei unserer Unternehmensgröße nicht</li>
+      </ul> 
+      <footer class="notes">
+      </footer>
+    </section>
+  </div></div>
+
+  <div id="remote-not-outsource-1" class="slide"><div>
+    <section>
+      <header>
+        <h2>Wie kann es funktionieren?</h2>
+      </header>
+         <img src="pictures/remote/team-1.png" 
+           class="middle"
+           alt="smileys">
+      <small class="credits">
+        <a href="http://oduinn.com/images/2013/WeAreAllRemoties-oct2013.pdf">
+          Image by John O'Duinn
+        </a>
+      </small>
+
+      <footer class="notes">
+      </footer>
+    </section>
+  </div></div>
+  
+    <div id="remote-not-outsource-2" class="slide"><div>
+    <section>
+      <header>
+        <h2>Wie kann es funktionieren?</h2>
+      </header>
+         <img src="pictures/remote/team-2.png" 
+           class="middle"
+           alt="smileys">
+      <small class="credits">
+        <a href="http://oduinn.com/images/2013/WeAreAllRemoties-oct2013.pdf">
+          Image by John O'Duinn
+        </a>
+      </small>
+
+      <footer class="notes">
+      </footer>
+    </section>
+  </div></div>
+
+    <div id="remote-not-outsource-3" class="slide"><div>
+    <section>
+      <header>
+        <h2>Remote != Outsource</h2>
+      </header>
+         <img src="pictures/remote/team-3.png" 
+           class="middle"
+           alt="smileys">
+      <small class="credits">
+        <a href="http://oduinn.com/images/2013/WeAreAllRemoties-oct2013.pdf">
+          Image by John O'Duinn
+        </a>
+      </small>
+
+      <footer class="notes">
+      </footer>
+    </section>
+  </div></div>
+
+    <div id="remote-not-outsource-4" class="slide"><div>
+    <section>
+      <header>
+        <h2>Remote != Outsource</h2>
+      </header>
+         <img src="pictures/remote/team-4.png" 
+           class="middle"
+           alt="smileys">
+      <small class="credits">
+        <a href="http://oduinn.com/images/2013/WeAreAllRemoties-oct2013.pdf">
+          Image by John O'Duinn
+        </a>
+      </small>
+
+      <footer class="notes">
+      </footer>
+    </section>
+  </div></div>
+
+    <div id="remote-not-outsource-5" class="slide"><div>
+    <section>
+      <header>
+        <h2>Remote != Outsource</h2>
+      </header>
+         <img src="pictures/remote/team-5.png" 
+           class="middle"
+           alt="smileys">
+      <small class="credits">
+        <a href="http://oduinn.com/images/2013/WeAreAllRemoties-oct2013.pdf">
+          Image by John O'Duinn
+        </a>
+      </small>
+
+      <footer class="notes">
+      </footer>
+    </section>
+  </div></div>
+
+    <div id="remote-not-outsource-6" class="slide"><div>
+    <section>
+      <header>
+        <h2>We are ALL remoties!</h2>
+      </header>
+         <img src="pictures/remote/team-6.png" 
+           class="middle"
+           alt="smileys">
+      <small class="credits">
+        <a href="http://oduinn.com/images/2013/WeAreAllRemoties-oct2013.pdf">
+          Image by John O'Duinn
+        </a>
+      </small>
+
+      <footer class="notes">
+      </footer>
+    </section>
+  </div></div>
+
+  <div id="Praxis" class="slide shout"><div>
+    <section>
+      <header>
+        <h2>Praxis</h2>
+      </header>
+      <footer class="notes">
+      </footer>
+    </section>
+  </div></div>
+  
+  <div id="meetings" class="slide"><div>
+    <section>
+      <header>
+        <h2>Meetings</h2>
+      </header>
+      <ul>
+        <li>Skype, Vidyo, WebRTC, die Technik ist da!</li>
+        <li>Büro'ler und Remoties zugleich anwesend</li>
+        <li>Unterscheidung zwischen: Muss unbedingt dabei sein und kann wenn neugierig</li>
+        <li>Meetings an einem Tag und nacheinander. Weniger Unterbrechungen!</li>
+      </ul> 
+      <footer class="notes">
+      </footer>
+    </section>
+  </div></div>
+  
+   <div id="meetings-2" class="slide"><div>
+    <section>
+      <header>
+        <h2>Meetings</h2>
+      </header>
+      <ul>
+        <li>Meeting Agenda wird vorher ausgefüllt. Outcome? Action items?</li>
+        <li>Etherpad notes, IRC als Backchannel</li>
+        <li>Meeting beginnt spätestens 5 Minuten nach vereinbarter Zeit</li>
+        <li>Moderator wechselt jedes mal. Chance für introvertierte Mitarbeiter.</li>
+      </ul> 
+      <footer class="notes">
+      </footer>
+    </section>
+  </div></div>
+  
+   <div id="communication" class="slide"><div>
+    <section>
+      <header>
+        <h2>Communication channels</h2>
+      </header>
+      <ul>
+        <li>Overcommunicate yourself</li>
+        <li>"Ich brauche jetzt eine Antwort!"</li>
+        <li>Eskalationsstufen / Erwartungshaltung Antwortdauer:
+         <ul>
+           <li>Bugmail</li>
+           <li>CC E-Mail</li>
+           <li>To E-Mail</li>
+           <li>IRC</li>
+           <li>SMS</li>
+           <li>Anruf</li>
+          </ul>
+          </li>
+          <li>Anruf: "Ich habe dir gerade eine Mail geschrieben" -- Really?</li>
+      </ul>
+      <footer class="notes">
+      </footer>
+    </section>
+  </div></div>
+  
+     <div id="write-things-down" class="slide"><div>
+    <section>
+      <header>
+        <h2>Write things down</h2>
+      </header>
+      <ul>
+        <li>Ein wiki. Konsistent benutzt.</li>
+        <li>Undokumentierte Entscheidungen sind keine.</li>
+        <li>Email Etiquette. Subject morphing</li>
+        <li>Meeting notes</li>
+        <li>Supportseiten im Wiki.</li>
+        <li>Phonebook. Kontaktdaten zu Ansprechpartnern.</li>
+      </ul>
+      <footer class="notes">
+      </footer>
+    </section>
+  </div></div>
+
+     <div id="1-on-1" class="slide"><div>
+    <section>
+      <header>
+        <h2>1 on 1</h2>
+      </header>
+      <ul>
+        <li><strong>Jede</strong> Woche. Punkt.</li>
+        <li>Compliments and complaints</li>
+        <li>Was gibts neues in der Firma?</li>
+        <li>Wie läuft die Woche? Blockers? Brennt was?</li>
+        <li>Karriereentwicklung: Formelles Gespräch alle 6 Monate</li>
+      </ul>
+      <footer class="notes">
+      </footer>
+    </section>
+  </div></div>
+  
+    <div id="work-weeks" class="slide"><div>
+    <section>
+      <header>
+        <h2>Work weeks</h2>
+      </header>
+      <ul>
+        <li>Face to face time</li>
+        <li>Socializing</li>
+        <li>Motivation</li>
+        <li>Im Büro oder an einem anderem coolen Ort</li>
+        <li>Klassenfahrt-Feeling</li>
+        <li>Allg. Prozessverbesserungen / Quartalsplanung<li>
+        <li>Oder: Sprint während des Projekts</li>
+      </ul>
+      <footer class="notes">
+      </footer>
+    </section>
+  </div></div>
+ 
+   <div id="tips" class="slide"><div>
+    <section>
+      <header>
+        <h2>Tipps für Remote Worker</h2>
+      </header>
+      <ul>
+        <li>Kreide es an, wenn Büro'ler im Prozess bevorzugt werden</li>
+        <li>Committe einen Tages-/Wochenplan</li>
+        <li>Arbeite nicht vom Bett aus!</li>
+        <li>Geh jeden Tag raus!</li>
+        <li>Networke mit anderen Techies auf Events
+        <li>Spreche auf Events
+        <li>Arbeite mal im Co-Working Space oder besuche ab und an
+            das Büro, wenn vorhanden und möglich
+      </ul>
+      <footer class="notes">
+      </footer>
+    </section>
+  </div></div>
+
+  <div id="thanks" class="slide"><div>
+    <section>
+      <header>
+        <h2>Danke!</h2>
+      </header>
+      <ul>
+        <li>Florian Scholz, Technical Writer, Mozilla</li>
+        <li><a href="http://florianscholz.com">florianscholz.com</a></li>
+        <li>Follow <a href="http://twitter.com/floscholz">@floscholz</a></li>
+        <li><strong>Slides</strong>: <a href="http://slides.florianscholz.com/remote-work.html">http://slides.florianscholz.com/remote-work.html</a></li>
+      </ul>
+      </small>
+
+    <footer class="notes">
+    </footer>
+
+    </section>
+  </div></div>
+
+  <!--
+    To hide progress bar from entire presentation
+    just remove “progress” element.
+    -->
+  <div class="progress"><div></div></div>
+  <script src="scripts/script.js"></script>
+  <!-- Copyright © 2010–2012 Vadim Makeev — pepelsbey.net -->
+</body>
+</html>
