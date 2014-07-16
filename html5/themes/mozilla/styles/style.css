@@ -240,6 +240,17 @@ blockquote .quotesource {
     opacity: 1;
   }
 
+/* tables */
+
+.standard-table {
+  width: 100%;
+  font-size: 20px;
+}
+.standard-table th {
+  text-align: left;
+}
+
+
 /* Code */
 .slide pre {
 	margin:0 0 45px;

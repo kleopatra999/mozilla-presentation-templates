@@ -1,0 +1,469 @@
+<!DOCTYPE HTML>
+<html lang="en-US" class="fade">
+<head>
+  <title>MDN JavaScript Documentation</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1274, user-scalable=no">
+  <link rel="stylesheet" href="themes/mozilla/styles/style.css?v=072014">
+  <style type="text/css">
+
+  </style>
+</head>
+<body class="list">
+
+  <header class="caption">
+    <h1>MDN JavaScript Documentation</h1>
+    <p class="footer">Florian Scholz, <a href="http://twitter.com/floscholz">@floscholz</a>, <a href="mailto:fscholz@mozilla.com">fscholz@mozilla.com</a></p>
+  </header>
+
+  <div id="cover" class="slide"><div>
+    <section>
+      <header>
+        <h2>MDN JavaScript Documentation</h2>
+      </header>
+      <footer class="byline">Florian Scholz, Technical Writer, Mozilla,
+      <br/> <br/> Open Source Enthusiast, <br/> Software Developer, <br />
+      <a href="http://florianscholz.com">florianscholz.com</a>. <br><br>
+      <p> <a href="https://developer.mozilla.org/en-US/docs/JavaScript">developer.mozilla.org/en-US/docs/JavaScript</a></footer>
+    <footer class="notes">
+    </footer>
+    </section>
+  </div></div>
+
+  <div id="agenda" class="slide"><div>
+    <section>
+      <header>
+        <h2>Agenda</h2>
+      </header>
+      <ul>
+        <li>About MDN
+        <li>How to help
+        <li>JavaScript doc structure and roadmap
+        <li>Get in touch
+        <li>Questions
+      </ul> 
+      <footer class="notes">
+      </footer>
+    </section>
+  </div></div>
+
+  <div id="about-MDN" class="slide"><div>
+    <section>
+      <header>
+        <h2>About MDN</h2>
+      </header>
+        <figure class="left">
+         <a href="https://developer.mozilla.org/"><img src="pictures/mdn.jpg" alt="MDN" /></a>
+       </figure>
+       <ul>
+         <li>Evolved from Netscape's DevEgde</li>
+         <li>Wiki since 2005</li>
+         <li>11,200 English docs</li>
+         <li> 16,400 docs in other locales <br> (10 active, 36 total)</li>
+       </ul>
+       <ul>
+         <li>Open Web docs (HTML, CSS, JS, APIs, ...)</li>
+         <li>Mozilla docs (Firefox OS, Add-ons, ...)</li>
+       </ul>
+      <footer class="notes">
+      </footer>
+    </section>
+  </div></div>
+  
+    <div id="kuma" class="slide"><div>
+    <section>
+      <header>
+        <h2>Kuma</h2>
+      </header>
+        <figure class="left">
+         <a href="https://github.com/mozilla/kuma"><img src="pictures/kuma.jpg" height="300" alt="Kuma" /></a>
+       </figure>
+       <ul>
+         <li>Django</li>
+         <li>nodejs for wiki macros<li>
+         <li>Available on Github</li>
+         <li>Launched in Aug 2012</li>
+         <li>Redesigned in Dec 2013</li>
+         <li><a href="https://github.com/mozilla/kuma">github.com/mozilla/kuma</a>
+       </ul>
+      <footer class="notes">
+      </footer>
+    </section>
+  </div></div>
+  
+  <div id="js-docs-2000" class="slide"><div>
+    <section>
+      <header>
+        <h2>JavaScript docs evolution</h2>
+      </header>
+      <figure class="frame middle">
+          <img src="pictures/js-docs/mdn-2000.png" alt="MDN JavaScript doc">
+          <p style="font-size: 20px">DevEdge, static site, 2000</p>
+        </figure>
+      <footer class="notes">
+      </footer>
+    </section>
+  </div></div>
+  
+  <div id="js-docs-2005" class="slide"><div>
+    <section>
+      <header>
+        <h2>JavaScript docs evolution</h2>
+      </header>
+      <figure class="frame middle">
+          <img src="pictures/js-docs/mdn-2005.png" alt="MDN JavaScript doc">
+          <p style="font-size: 20px">MDC wiki, 2005</p>
+        </figure>
+      <footer class="notes">
+      </footer>
+    </section>
+  </div></div>
+
+  <div id="js-docs-2008" class="slide"><div>
+    <section>
+      <header>
+        <h2>JavaScript docs evolution</h2>
+      </header>
+      <figure class="frame middle">
+          <img src="pictures/js-docs/mdn-2008.png" alt="MDN JavaScript doc">
+          <p style="font-size: 20px">MDC wiki, 2008</p>
+        </figure>
+      <footer class="notes">
+      </footer>
+    </section>
+  </div></div>
+
+  <div id="js-docs-2012" class="slide"><div>
+    <section>
+      <header>
+        <h2>JavaScript docs evolution</h2>
+      </header>
+      <figure class="frame middle">
+          <img src="pictures/js-docs/mdn-2012.png" alt="MDN JavaScript doc">
+          <p style="font-size: 20px">MDN wiki, 2012</p>
+        </figure>
+      <footer class="notes">
+      </footer>
+    </section>
+  </div></div>
+
+  <div id="js-docs-2013" class="slide"><div>
+    <section>
+      <header>
+        <h2>JavaScript docs evolution</h2>
+      </header>
+      <figure class="frame middle">
+          <img src="pictures/js-docs/mdn-2013.png" alt="MDN JavaScript doc">
+          <p style="font-size: 20px">MDN wiki, 2013</p>
+        </figure>
+      <footer class="notes">
+      </footer>
+    </section>
+  </div></div>
+  
+    <div id="redesgined-MDN" class="slide"><div>
+    <section>
+      <header>
+        <h2>Redesigned MDN</h2>
+      </header>
+      <ul>
+         <li>Better and faster navigation<li>
+         <li>More docs accessible</li>
+         <li>Information architecture improved but ongoing wip</li>
+         <li>Migrated external docs to MDN</li>
+         <li>Most important: <strong>Let the docs not rot!</strong>
+           <ul>
+             <li>Neither their appearance nor the contents</li>
+           </ul>
+         </li>
+         <li>Upcoming: GitHub login</li>
+       </ul>
+      <footer class="notes">
+      </footer>
+    </section>
+  </div></div>
+
+
+<div id="help-wanted" class="slide"><div>
+    <section>
+      <p class="middle">How to help</p>
+      <footer class="notes">
+      </footer>
+    </section>
+  </div></div>
+
+
+  <div id="how-to-help" class="slide"><div>
+    <section>
+      <header>
+        <h2>OK wait, why should I?</h2>
+      </header>
+      <ul class="longlist">
+         <li>Preventing doc rotting is a lot of work</li>
+         <li>MDN is not a quick throw-away campaign site</li>
+         <li>Web encyclopedia wiki established in 2005</li>
+         <li>Always been an open community effort<li>
+         <li>Join 600+ monthly MDN wiki editors</li>
+         <li>My upshot: <strong>Collaboration on docs makes you smarter!</strong></li>
+       </ul>
+       
+      <footer class="notes">
+      </footer>
+    </section>
+  </div></div>
+
+
+  <div id="how-to-help-writing" class="slide"><div>
+    <section>
+      <header>
+        <h2>How to help — writing</h2>
+      </header>
+      <ul class="longlist">
+         <li>Write new pages<li>
+         <li>Proof-read pages, provide feedback</li>
+         <li>Perform editorial or technical reviews</li>
+         <li>Rewrite docs for beginners</li>
+         <li>Reuse your blog post</li>
+         <li>Improve our information architecture</li>
+         <li>Tag ALL the docs</li>
+       </ul>
+      <footer class="notes">
+      </footer>
+    </section>
+  </div></div>
+
+  <div id="how-to-help-coding" class="slide"><div>
+    <section>
+      <header>
+        <h2>How to help — coding</h2>
+      </header>
+      <ul class="longlist">
+         <li>Add data to the compat tables, write Browser tests</li>
+         <li>Add example code</li>
+         <li>Add Polyfills and shims</li>
+         <li>Add your code and tell a story in a tutorial</li>
+         <li>Write KumaScript wiki macros to improve wiki automation</li>
+         <li>Hack on Kuma</li>
+         <li>Hack on MDN Firefox add-ons</li>
+         <li>MDN Firefox OS app!?</li>
+       </ul>
+      <footer class="notes">
+      </footer>
+    </section>
+  </div></div>
+
+
+  <div id="how-to-help-more" class="slide"><div>
+    <section>
+      <header>
+        <h2>How to help — even more</h2>
+      </header>
+      <ul class="longlist">
+         <li>Translate pages into your language!
+           <ul>
+             <li>French and Chinese are actively working on JS doc l10n</li>
+           </ul>
+         </li>
+         <li>Link to us</li>
+         <li>Be part of the discussions, join our <a href="https://lists.mozilla.org/listinfo/dev-mdc">mailing list</a></li>
+         <li>Compare the JS docs to other language's docs. What to improve?</li>
+         <li>Follow <a href="https://twitter.com/NewOnMDN">@newOnMDN</a> for updates</li>
+         <li>Spread the word, give a talk</li>
+       </ul>
+      <footer class="notes">
+      </footer>
+    </section>
+  </div></div>
+
+
+  <div id="doc-status" class="slide"><div>
+    <section>
+      <header>
+        <h2>Find specific tasks</h2>
+      </header>
+      <figure>
+          <img src="pictures/js-docs/js-doc-status.png" alt="JavaScript doc status" width="600">
+        </figure>
+       <ul>
+         <li>35 MDN topic sections so far</li>
+         <li>Covering 7,200 out of 11,200 pages</li>
+         <li>"Documentation status" page for each section</li>
+         <li>Find things based on your area of expertise and your skillset</a>
+       </ul>
+      <footer class="notes">
+      </footer>
+    </section>
+  </div></div>
+
+  <div id="homework" class="slide"><div>
+    <section>
+      <header>
+        <h2>Your homework</h2>
+      </header>
+       <ol>
+         <li>Go to <a href="http://arewedocumentedyet.com">arewedocumentedyet.com</a></li>
+         <li>Pick your topic and go to the detail page</li>
+         <li>Reach out to us if in doubt</li>
+         <li>Help fixing things up</li>
+         <li>Tell us about it :-)</li>
+       </ol>
+      </footer>
+    </section>
+  </div></div>
+
+<div id="js-docs" class="slide"><div>
+    <section>
+      <p class="middle">JavaScript docs</p>
+      <footer class="notes">
+      </footer>
+    </section>
+  </div></div>
+
+  <div id="js-doc-structure" class="slide"><div>
+    <section>
+      <header>
+        <h2>Structure</h2>
+      </header>
+      <table class="standard-table">
+ <caption>
+  MDN JavaScript chapters</caption>
+ <tbody>
+  <tr>
+   <th>Name</th>
+   <th>Chapters</th>
+   <th>Pages</th>
+  </tr>
+  <tr>
+   <td><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects">Standard-library / Objects</a></td>
+   <td>23</td>
+   <td>366</td>
+  </tr>
+  <tr>
+   <td><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators">Expressions and Operators</a></td>
+   <td>1</td>
+   <td>25</td>
+  </tr>
+  <tr>
+   <td><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements">Statements</a></td>
+   <td>1</td>
+   <td>26</td>
+  </tr>
+  <tr>
+   <td><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions_and_function_scope">Functions</a> </td>
+   <td>1</td>
+   <td>8</td>
+  </tr>
+  <tr>
+   <td><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide">JavaScript language guide</a></td>
+   <td>1</td>
+   <td>20</td>
+  </tr>
+  <tr>
+   <td>More articles and tutorial pages</td>
+   <td>-</td>
+   <td>21</td>
+  </tr>
+  <tr>
+   <td>Meta pages</td>
+   <td>-</td>
+   <td>22</td>
+  </tr>
+  <tr>
+   <td><strong>Total</strong></td>
+   <td>27</td>
+   <td>ca 500</td>
+  </tr>
+  <tr>
+   <td>More chapters TBD</td>
+   <td></td>
+   <td></td>
+  </tr>
+ </tbody>
+</table>
+      </footer>
+    </section>
+  </div></div>
+
+  <div id="a-js-page" class="slide"><div>
+    <section>
+      <header>
+        <h2>A JavaScript reference doc has:</h2>
+      </header>
+       <ul class="longlist">
+         <li>Short summary first sentence</li>
+         <li>Syntax box</li>
+         <li>A longer description / details</li>
+         <li>Example code</li>
+         <li>References to relevant ES specifications</li>
+         <li>Browser compat table and notes</li>
+         <li>A sidebar with relevant links in this topic</li>
+         <li>Proper tags and flags (Non-standard, experimental, etc)</li>
+         <li>Example page: ES6 <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol"><code>Symbol</code></a> object</li>
+       </ul>
+      </footer>
+    </section>
+  </div></div>
+
+  <div id="roadmap-1" class="slide"><div>
+    <section>
+      <header>
+        <h2>What's next?</h2>
+      </header>
+      <p>Right now: ES6 Features</p>
+       <ul class="longlist">
+         <li>More std lib: Typed Arrays, Promises</li>
+         <li>Statements, generators, iterators</li>
+         <li>Classes chapter needed!</li>
+         <li>Modules chapter needed!</li>
+         <li>Detail love: the little changes in ES6</li>
+         <li>A beginner friendly and not outdated JS guide chapter</li>
+       </ul>
+      </footer>
+    </section>
+  </div></div>
+
+  <div id="roadmap-2" class="slide"><div>
+    <section>
+      <header>
+        <h2>What's next?</h2>
+      </header>
+       <p>Probably later (2015):</p>
+       <ul class="longlist">
+         <li>PJS, SIMD</li>
+         <li>ES7 features</li>
+       </ul>
+       <p>Additional needs:</p>
+       <ul class="longlist">
+         <li>Docs on how to read the ES specifications</li>
+         <li>Docs on how to contribute to ES and ES-test</li>
+       </ul>
+      </footer>
+    </section>
+  </div></div>
+  
+  <div id="contact" class="slide"><div>
+    <section>
+      <header>
+        <h2>Get in touch</h2>
+      </header>
+       <ul class="longlist">
+         <li><a href="irc://irc.mozilla.org/mdn">irc.mozilla.org #mdn</a>
+           <ul>
+             <li>Bi-weekly IRC chat meeting!</li>
+           </ul>
+          </li>
+         <li><a href="https://lists.mozilla.org/listinfo/dev-mdc">dev-mdc mailing list</a></li>
+         <li><a href="https://twitter.com/mozhacks/">@newOnMDN</a>, <a href="https://twitter.com/mozhacks/">@mozhacks</a></li>
+         <li><a href="https://twitter.com/floscholz">@floscholz</a>, fscholz@mozilla.com
+         <li>Don't forget your homework!</li>
+         <li>Thanks for listening!</li>
+       </ul>
+      </footer>
+    </section>
+  </div></div>
+
+  <div class="progress"><div></div></div>
+  <script src="scripts/script.js"></script>
+  <!-- Copyright © 2010–2012 Vadim Makeev — pepelsbey.net -->
+</body>
+</html>
