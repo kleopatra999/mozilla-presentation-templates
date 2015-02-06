@@ -1,0 +1,617 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+  <title>What's next for JavaScript – ES6 and beyond</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=792, user-scalable=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <link rel="stylesheet" href="shower/themes/mozilla/styles/style.css">
+</head>
+<body class="list">
+<style>
+small {font-size: small}
+</style>
+  <header class="caption">
+    <h1>What's next for JavaScript – ES6 and beyond</h1>
+    <p>Florian Scholz, Mozilla</p>
+  </header>
+  <section class="slide cover" id="cover"><div>
+    <h2>What's next for JavaScript – ES6 and beyond</h2>
+    <p>Florian Scholz, Mozilla</p>
+    <img src="pictures/cover.jpg" alt="">
+  </div></section>
+  <section class="slide cover" id="about"><div>
+    <div style="background: rgba(0,0,0, 0.7)">
+      <h2>Florian Scholz</h2>
+      <p>Technical Writer <br> Mozilla Developer Network (MDN)</p>
+      <p><a href="https://twitter.com/floscholz">@floscholz</a>, 
+         <a href="http://florianscholz.com">florianscholz.com</a> <br><br>
+      </p>
+    </div>
+    <img src="pictures/about.jpg" alt="">
+  </div></section>
+  <section class="slide"><div>
+    <h2>Brace yourselves, ES6 is coming</h2>
+    <table>
+    <tr>
+      <th scope="col">Standard</th>
+      <th>Pages</th>
+      <th>Release</th>
+    </tr>
+    <tr>
+      <th scope="row">ES 1</th>
+      <td>110</td>
+      <td>1997</td>
+    </tr>
+    <tr>
+      <th scope="row">ES 2</th>
+      <td>117</td>
+      <td>1998</td>
+    </tr>
+    <tr>
+      <th scope="row">ES 3</th>
+      <td>188</td>
+      <td>1999</td>
+    </tr>
+    <tr>
+      <th scope="row">ES 4</th>
+      <td>0</td>
+      <td>Never</td>
+    </tr>
+    <tr>
+      <th scope="row">ES 5</th>
+      <td>252</td>
+      <td>2009</td>
+    </tr>
+    <tr>
+      <th scope="row">ES 5.1</th>
+      <td>258</td>
+      <td>2011</td>
+    </tr>
+    <tr>
+      <th scope="row">ES 6</th>
+      <td><strong>656</strong></td>
+      <td><strong>2015 (June)</strong></td>
+    </tr>
+    </table>
+    <p><small>Feature history: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/New_in_JavaScript">https://developer.mozilla.org/en-US/docs/Web/JavaScript/New_in_JavaScript</a></small></p>
+  </div></section>
+ <section class="slide"><div>
+    <h2>Goals of ES6 / "harmony"</h2>
+    <ol>
+      <li>Make JavaScript a better language for writing
+          <ul>
+            <li>complex applications,</li>
+            <li>libraries,</li>
+            <li>code generators (e.g. Emscripten).</li>
+          </ul>
+      </li>
+      <li class="next">Improve interoperability, adopt de facto standards.</li>
+      <li class="next">"Don't break the Web!". Be backwards-compatible. No versions.</li>
+      <li class="next">=&gt; Also means: decisions stick, no way to remove design mistakes.</li>
+    </ol>
+    <p><small><a href="http://wiki.ecmascript.org/doku.php?id=harmony:harmony">http://wiki.ecmascript.org/doku.php?id=harmony:harmony</a></small></p>
+  </div></section>
+  <section class="slide"><div>
+  <h2>ES 5.1 implementation status</h2>
+  <img src="pictures/kangax-es5.png" alt="">
+  <p><small><a href="http://kangax.github.io/compat-table/es5/">http://kangax.github.io/compat-table/es5/</a></small></p>
+  </div></section>
+  <section class="slide"><div>
+  <h2>ES 6 implementation status</h2>
+  <img src="pictures/kangax.png" alt="">
+  <p><small><a href="http://kangax.github.io/compat-table/es6/">http://kangax.github.io/compat-table/es6/</a></small></p>
+  </div></section>
+  <section class="slide"><div>
+  <h2>Easing into ES6 / new features</h2>
+  <img src="pictures/syntax-stdlib.png" alt="">
+  </div></section>
+    <section class="slide shout"><div>
+    <h2>Enhanced syntax</h2>
+  </div></section>
+  <section class="slide"><div>
+    <h2>Arrow functions</h2>
+    <pre>
+      <code><mark class="comment">// ES 5</mark></code>
+      <code>[1, 2, 3].map(function (x) { return x * x});</code>
+      <code><mark class="comment">// ES 6</mark></code>
+      <code>[1, 2, 3].map(x => x * x);</code>
+      <code><mark class="comment">// [ 1, 4, 9 ]</mark></code>
+    </pre>
+    <p><small><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions">MDN docs</a> | Firefox 22+ | IE Spartan</small></p>
+  </div></section>
+  <section class="slide"><div>
+    <h2>Arrow functions – lexical this</h2>
+    <pre>
+      <code>function Person() {</code>
+      <code>  this.age = 0;</code>
+      <code>  setInterval(function growUp(){</code>
+      <code>    this.age++;</code>
+      <code>  }, 1000);</code>
+      <code>}</code>
+      <code>var p = new Person();</code>
+      <code>p.age; <mark class="comment">// 0</mark></code>
+    </pre>
+  </div></section>
+    <section class="slide"><div>
+    <h2>Arrow functions – lexical this</h2>
+    <pre>
+      <code>function Person() {</code>
+      <code>  <mark>var that = this;</mark></code>
+      <code>  that.age = 0;</code>
+      <code>  setInterval(function growUp(){</code>
+      <code>    that.age++;</code>
+      <code>  }, 1000);</code>
+      <code>}</code>
+      <code>var p = new Person();</code>
+      <code>p.age; <mark class="comment">// 0 ... 1 ... 2 ...</mark></code>
+    </pre>
+  </div></section>
+    <section class="slide"><div>
+    <h2>Arrow functions – lexical this</h2>
+    <pre>
+      <code>function Person() {</code>
+      <code>  this.age = 0;</code>
+      <code>  setInterval(<mark>() => {</mark></code>
+      <code>    this.age++;</code>
+      <code>  }, 1000);</code>
+      <code>}</code>
+      <code>var p = new Person();</code>
+      <code>p.age; <mark class="comment">// 0 ... 1 ... 2 ...</mark></code>
+    </pre>
+  </div></section>
+  <section class="slide"><div>
+    <h2><code>let</code> and <code>const</code> – block scoping</h2>
+    <pre class="left">
+      <code>function varTest() {</code>
+      <code>  var x = 31;</code>
+      <code>  if (true) {</code>
+      <code>    <mark>var x = 71;</mark></code>
+      <code>    console.log(x); <mark class="comment">// 71</mark></code>
+      <code>  }</code>
+      <code>console.log(x); <mark>// 71</mark></code>
+      <code>}</code>
+    </pre>
+    <pre class="right">
+      <code>function letTest() {</code>
+      <code>  let x = 31;</code>
+      <code>  if (true) {</code>
+      <code>    <mark>let x = 71;</mark></code>
+      <code>    console.log(x); <mark class="comment">// 71</mark></code>
+      <code>  }</code>
+      <code>console.log(x); <mark>// 31</mark></code>
+      <code>}</code>
+    </pre>
+    <br style="clear:both">
+    <p><small>
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let">MDN let docs</a> |
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const">MDN const docs</a> |
+      Firefox | IE Spartan | (Chrome/v8) | (Safari)
+    </small></p>
+  </div></section>
+  <section class="slide"><div>
+    <h2>Parameters: Default values</h2>
+    <pre>
+      <code>function multiply(a, b) {</code>
+      <code>  var b = b || 1;</code>
+      <code>  return a * b;</code>
+      <code> }</code>
+      <code>function multiply(a, <mark>b = 1</mark>) {</code>
+      <code>  return a * b;</code>
+      <code>}</code>
+    </pre>
+      <p><small>
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Default_parameters">MDN docs</a> |
+      Firefox 15+
+    </small></p>
+  </div></section>
+    <section class="slide"><div>
+    <h2>Parameters: Rest</h2>
+    <pre>
+      <code>function multiply(multiplier, <mark>...theArgs</mark>) {</code>
+      <code>  return theArgs.map(x => multiplier * x);</code>
+      <code> }</code>
+      <code><br></code>
+      <code>var arr = multiply(2, <mark>1, 2, 3</mark>); </code>
+      <code>console.log(arr); <mark class="comment">// [2, 4, 6]</mark></code>
+      <code><br></code>
+      <p><small>
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/rest_parameters">MDN docs</a> |
+      Firefox 15+
+    </small></p>
+    </pre>
+  </div></section>
+  <section class="slide"><div>
+    <h2>Spread operator</h2>
+    <pre>
+      <code>var parts = ['shoulder', 'knees'];</code>
+      <code>var lyrics = ['head', <mark>...parts</mark>, 'and', 'toes'];</code>
+      <code><br></code>
+      <code>var arr1 = [0, 1, 2];</code>
+      <code>var arr2 = [3, 4, 5];</code>
+      <code>arr1.push(<mark>...arr2</mark>);</code>
+    </pre>
+    <p><small>
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_operator">MDN docs</a> |
+      Firefox 16+ | IE Spartan | Safari 8
+    </small></p>
+  </div></section>
+  <section class="slide"><div>
+    <h2>Destructuring: arrays</h2>
+    <pre>
+      <code>var foo = ["one", "two", "three"];</code>
+      <code><mark class="comment">// without destructuring</mark></code>
+      <code>var one   = foo[0];</code>
+      <code>var two   = foo[1];</code>
+      <code>var three = foo[2];</code>
+      <code><mark class="comment">// with destructuring</mark></code>
+      <code>var [one, two, three] = foo;</code>
+    </pre>
+    <p><small>
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment">MDN docs</a> |
+      Firefox 2+ | Safari 8
+    </small></p>
+  </div></section>
+    <section class="slide"><div>
+    <h2>Destructuring: objects</h2>
+    <pre>
+      <code>var o = {p: 42, q: true};</code>
+      <code>var {p, q} = o;</code>
+      <code><mark class="comment">// shorthand for {p:p, q:q}</mark></code>
+      <code>console.log(p); <mark class="comment">// 42</mark></code>
+      <code>console.log(q); <mark class="comment">// true</mark> </code>
+    </pre>
+    <p><small>
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment">MDN docs</a> |
+      Firefox 2+ | Safari 8
+    </small></p>
+  </div></section>
+   <section class="slide"><div>
+    <h2>Object initializer – shorthands</h2>
+    <pre>
+      <code>var o = {</code>
+      <code>  drawCircle: function ([parameters]) {},</code>
+      <code>}</code>
+      <code><mark class="comment">// ES 6</mark></code>
+      <code>var o = {</code>
+      <code>  drawCircle([parameters]) {},</code>
+      <code>}</code>
+    </pre>
+   <p><small>
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Object_initializer">MDN docs</a> |
+      Firefox 34+ | IE Spartan | Chrome 41/Opera 28
+    </small></p>
+  </div></section>
+  </div></section>
+   <section class="slide"><div>
+    <h2>Object initializer – computed properties</h2>
+    <pre>
+      <code>var param = 'size';</code>
+      <code>var config = {</code>
+      <code>  [param]: 12,</code>
+      <code>  ["mobile" + param[0].toUpperCase() + param.slice(1)]: 4</code>
+      <code>};</code>
+      <code>console.log(config); <mark> // { size: 12, mobileSize: 4 }</mark></code>
+    </pre>
+   <p><small>
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Object_initializer">MDN docs</a> |
+      Firefox 34+ | IE Spartan | Chrome 41/Opera 28 | Safari 8
+    </small></p>
+  </div></section>
+   <section class="slide"><div>
+    <h2>Template Strings</h2>
+    <pre>
+      <code>var msg = `Hello ${document.domain}`;</code>
+      <code><mark class="comment">// "Hello www.jfokus.se"</mark></code>
+      <code><br></code>
+      <code>`multi-line</code>
+      <code>strings, auyeah`</code>
+      <code><br></code>
+      <code><mark class="comment">// tagged template strings</mark></code>
+      <code>escape`&lt;p title="${title}"&gt;Hi ${user}!&lt;/p&gt;`;</code>
+    </pre>
+     <p><small>
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/template_strings">MDN docs</a> |
+      Firefox 34+ | IE Spartan | Chrome 41/Opera 28
+    </small></p>
+  </div></section>
+  <section class="slide"><div>
+    <h2>Classes</h2>
+    <pre>
+      <code>function Person(name) {</code>
+      <code>  this.name = name;</code>
+      <code> }</code>
+      <code>Person.prototype.introduce = function() {</code>
+      <code>  return "Hi, I am " + this.name;</code>
+      <code>};</code>
+    </pre>
+  </div></section>
+   <section class="slide"><div>
+    <h2>Classes</h2>
+    <pre>
+      <code>class Person {</code>
+      <code>  constructor(name) {</code>
+      <code>    this.name = name;</code>
+      <code>  }</code>
+      <code>  introduce() {</code>
+      <code>    return "Hi, I am " + this.name</code>
+      <code>}</code>
+    </pre>
+     <p><small>
+      Firefox WIP | IE Spartan | Chrome WIP
+    </small></p>
+  </div></section>
+  <section class="slide"><div>
+    <h2>Sub classes</h2>
+    <pre>
+      <code>class Contributor <mark>extends</mark> Person {</code>
+      <code>  constructor(name, project) {</code>
+      <code>    <mark>super(name);</mark></code>
+      <code>    this.project = project;</code>
+      <code>  }</code>
+      <code>  introduce() {</code>
+      <code>    return <mark>super()</mark> + " and I work on " + this.project;</code>
+      <code>  }</code>
+      <code>}</code>
+    </pre>
+  </div></section>
+   <section class="slide"><div>
+    <h2>Modules</h2>
+    <pre>
+      <code><mark class="comment">// lib/utils.js</mark></code>
+      <code>export function foo() { ... }</code>
+      <code>export const BAR = 42;</code>
+      <code><mark class="comment">// main.js</mark></code>
+      <code>import {foo} from 'lib/utils';</code>
+      <code>foo();</code>
+      <code>import * as utils from 'lib/utils';</code>
+      <code>utils.BAR; <mark class="comment">// 42</mark></code>
+    </pre>
+  </div></section>
+  <section class="slide shout"><div>
+    <h2>New features + <br> Standard library</h2>
+  </div></section>
+   <section class="slide"><div>
+    <h2>Map, Set, WeakMap, WeakSet</h2>
+    <pre class="left">
+      <code>var map = new Map();</code>
+      <code>map.set(obj, "foo");</code>
+      <code>map.set("bar", "baz");</code>
+      <code><br></code>
+      <code>var set = new Set();</code>
+      <code>set.add(1);</code>
+      <code>set.add(obj);</code>
+      <code>set.add("foo");</code>
+    </pre>
+    <div class="right">
+    <p>Weak{Map,Set}:</p>
+    <ul>
+      <li>Keys are objects only</li>
+      <li>Garbage Collection</li>
+      <li>No enumeration</li>
+    </ul>
+    </div>
+    <br style="clear:both">
+    <p><small>
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map">Map</a> |
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set">Set</a> |
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakMap">WeakMap</a> |
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakSet">WeakSet</a> |
+      Firefox | IE Spartan | Chrome/v8 | Safari 8
+    </small></p>
+   </div></section>
+   <section class="slide"><div>
+    <h2>for...in vs for...of</h2>
+    <pre>
+      <code>var arr = [ 3, 5, 7 ];</code>
+      <code>arr.foo = "hello";</code>
+      <code>for (var i <mark>in</mark> arr) {</code>
+      <code>  console.log(i); // logs "0", "1", "2", "foo"</code>
+      <code>}</code>
+      <code>for (var i <mark>of</mark> arr) {</code>
+      <code>  console.log(i); // logs 3, 5, 7</code>
+      <code>}</code>
+    </pre>
+     <p><small>
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...of">MDN docs</a> |
+      Firefox 13+ | IE Spartan | Chrome/v8 | (Safari 8)
+    </small></p>
+  </div></section>
+  <section class="slide"><div>
+    <h2>Iteration – new protocols</h2>
+    <ul>
+      <li>Iterable protocol: define iteration behavior (for <code>for..of</code>)
+      <ul>
+        <li>Built-ins: Arrays, Maps, Sets, Strings, Typed Arrays</li>
+        <li>Array-likes (e.g. DOM NodeList)</li>
+      </ul>
+      </li>
+      <li>Iterator protocol: Implementing own iterators (<code>next()</code>)
+    </ul>
+     <p><small>
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/The_Iterator_protocol">MDN docs</a>
+    </small></p>
+  </div></section>
+   <section class="slide"><div>
+    <h2>Generators</h2>
+    <pre>
+      <code>function* myGenerator() {</code>
+      <code>  for (var i = 0; i &lt; 2; i++) {</code>
+      <code>    yield i * 2;</code>
+      <code>}}</code>
+      <code>var g = myGenerator();</code>
+      <code>g.next(); <mark class="comment">// { value: 0, done: false }</mark></code>
+      <code>g.next(); <mark class="comment">// { value: 2, done: false }</mark></code>
+      <code>g.next(); <mark class="comment">// { value: undefined, done: true }</mark></code>
+    </pre>
+     <p><small>
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function*">MDN docs</a> |
+      Firefox | IE Spartan (WIP) | Chrome/v8
+    </small></p>
+  </div></section>
+  <section class="slide"><div>
+  <h2>Promise – result of async operations</h2>
+  <pre>
+    <code>function readFile(filename, enc){</code>
+    <code>  return <mark>new Promise</mark>(function (fulfill, reject){</code>
+    <code>    fs.readFile(filename, enc, function (err, res){</code>
+    <code>       if (err) <mark>reject(err)</mark>;</code>
+    <code>       else <mark>fulfill(res)</mark>;</code>
+    <code>    });</code>
+    <code>  });</code>
+    <code>}</code>
+  </pre>
+  <p><small>
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">MDN docs</a> |
+      Firefox | IE Spartan | Chrome/v8 | Safari 8
+    </small></p>
+  </div></section>
+   <section class="slide"><div>
+    <h2>Symbols – new primitive type</h2>
+    <pre class="left">
+      <code>var sym = Symbol("foo");</code>
+      <code>var gsym = Symbol.for("b"); <mark class="comment">// global</mark></code>
+      <code>typeof sym; <mark class="comment">// "symbol"</mark></code>
+      <code>Object.getOwnPropertySymbols();</code>
+      <code><br></code>
+      <code>const baz = Symbol();</code>
+      <code>var obj = { [baz]: "bar" };</code>
+    </pre>
+    <div class="right">
+    <u>Primitives:</u>
+    <ul>
+      <li>Boolean</li>
+      <li>Number</li>
+      <li>String</li>
+      <li>Null</li>
+      <li>undefined</li>
+      <li>Symbol (new)</li>
+    </ul>
+    </div>
+    <br style="clear:both">
+  <p><small>
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol">MDN docs</a> |
+      Firefox 36+ | IE Spartan | Chrome/v8
+    </small></p>
+  </div></section>
+  <section class="slide"><div>
+    <h2>Proxy – it's a trap</h2>
+    <pre class="left">
+      <code>var handler = {</code>
+      <code>  get: function(target, name){</code>
+      <code>    return name in target ? target[name] : 42;</code>
+      <code>}};</code>
+      <code>var p = new Proxy({}, handler);</code>
+      <code>p.a = 1;</code>
+      <code>console.log(p.a, p.b); // 1, 42</code>
+    </pre>
+    <div class="right">
+    <img src="pictures/trap.jpg" alt="">
+    </div>
+  <p style="clear:both"><small>
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy">MDN docs</a> |
+      Firefox | IE Spartan
+    </small></p>
+  </div></section>
+  <section class="slide"><div>
+    <h2>Richer standard library</h2>
+    <ul>
+      <li>Array: <code>Array.from</code>, <code>Array#fill</code>, <code>Array#find</code>, ...</li>
+      <li>Math functions (<code>log10</code>, <code>sinh</code>, <code>fround</code>, <code>imul</code>, ...)</li>
+      <li>Number: <code>Number.parseInt</code>, <code>Number.isSafeInteger</code>, ...</li>
+      <li>Object: <code>Object.assign</code>, ..</li>
+      <li>String: <code>String#fromCodePoint</code>, <code>String#includes</code>, ...</li>
+      <li>Array methods for Typed Arrays (which got incorporated into ES6)</li>
+      <li>Separate standard: <code>Intl</code> objects for Internationalization</li>
+    </ul>
+  <p><small>
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/New_in_JavaScript/ECMAScript_6_support_in_Mozilla">MDN docs</a>
+    </small></p>
+  </div></section>
+  <section class="slide shout"><div>
+    <h2>ES 2016 (ES7)</h2>
+  </div></section>
+ <section class="slide"><div>
+    <h2>Faster specification process</h2>
+    <ul>
+      <li>Stage 1: Proposal: Driven by a champion, usage examples.</li>
+      <li>Stage 2: Working Draft: Initial spec text, accepted by committee.</li>
+      <li>Stage 3: Candidate Draft: Implementation experiments.</li>
+      <li>Stage 4: Last Call Draft: Final spec, tests, 2 implementations pass.</li>
+    </ul>
+    <p>Stage 4 proposals to be considered in a yearly edition of ECMAScript.</p>
+      <p><small>
+      <a href="https://github.com/tc39/ecma262">https://github.com/tc39/ecma262</a>
+    </small></p>
+  </div></section>
+  <section class="slide"><div>
+    <h2>Comprehensions (deferred from ES6)</h2>
+    <pre>
+      <code>[for (i of [ 1, 2, 3 ]) i*i ];</code>
+      <code><mark class="comment">// [ 1, 4, 9 ]</mark></code>
+      <code><br></code>
+      <code>[for (year of years) if (year > 2000) year];</code>
+      <code><br></code>
+      <code>(for (letters of ["A", "B", "C"]) letters.toLowerCase());</code>
+      <code><mark class="comment">// generator yielding "a", "b", and "c"</mark></code>
+    </pre>
+      <p><small>
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Array_comprehensions">MDN docs</a> |
+      Firefox
+    </small></p>
+  </div></section>
+  <section class="slide"><div>
+    <h2>Stage 2: Object.observe()</h2>
+    <pre>
+      <code>var obj = { foo: 0; bar: 1; };</code>
+      <code>Object.observe(obj, function(changes) {</code>
+      <code>  console.log(changes);  }</code>
+      <code>obj.baz = 2;</code>
+      <code><mark class="comment"> // [{name: 'baz', object: &lt;obj&gt;, <mark>type: 'add'</mark>}]</mark></code>
+      <code>obj.foo = 42;</code>
+      <code><mark class="comment"> // [{name: 'foo', object: &lt;obj&gt;, <mark>type: 'update'</mark>,</mark></code>
+      <code>    <mark class="comment"><mark>oldValue: 0</mark>}]</mark></code>
+    </pre>
+      <p><small>
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/observe">MDN docs</a> |
+      Chrome/v8
+    </small></p>
+  </div></section>
+  <section class="slide"><div>
+    <h2>SIMD types</h2>
+    <p>Single Instruction Multiple Data (Vector processing)</p>
+    <pre>
+      <code>var a = SIMD.float32x4(1.0, 2.0, 3.0, 4.0);</code>
+      <code>var b = SIMD.float32x4(5.0, 6.0, 7.0, 8.0);</code>
+      <code>var c = SIMD.float32x4.add(a,b);</code>
+      <code><mark class="comment">// [6.0, 8.0, 10.0, 12.0]</mark></code>
+    </pre>
+    <p>WebGL, Audio, codecs, Crypto, ...</p>
+      <p><small>
+      <a href="https://github.com/johnmccutchan/ecmascript_simd">https://github.com/johnmccutchan/ecmascript_simd</a> |
+      Firefox Nightly Channel
+    </small></p>
+  </div></section>
+   <section class="slide"><div>
+    <h2>More</h2>
+    <ul>
+      <li>Typed Objects</li>
+      <li>Async generators</li>
+      <li>Exponentiation operator: <code>x ** y</code> (same as <code>Math.pow(x,y)</code>)</li>
+      <li><code>Array#includes</code>, <code>ArrayBuffer.transfer</code></li>
+      <li><code>String#at</code>, <code>String#lpad</code>, <code>String#rpad</code></li>
+      <li>More <a href="https://github.com/tc39/ecma262">current proposals</a></li>
+    </ul>
+  </div></section>
+	<section class="slide cover"><div>
+		<h2 class="left" style="text-align: left">Thanks! <br><br>developer.mozilla.org <br><br> @floscholz</h2>
+		<img src="pictures/picture.jpg" alt="">
+	</div></section>
+	<!--
+		To hide progress bar from entire presentation
+		just remove “progress” element.
+		-->
+	<div class="progress" style="background:black; border-top: 2px solid black"><div></div></div>
+	<script src="shower/shower.min.js"></script>
+</body>
+</html>
